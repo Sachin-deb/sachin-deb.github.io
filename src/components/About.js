@@ -1,14 +1,11 @@
 import React from 'react';
+import profilePicture from '../images/dp.jpg';
 
 function About() {
   return (
     <div className="about">
       <div className="profile-picture-container">
-        <img
-            src="https://scontent.fdac14-1.fna.fbcdn.net/v/t39.30808-1/448165444_835875758452163_7814395631576015698_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=111&ccb=1-7&_nc_sid=e99d92&_nc_eui2=AeEDEen2WJCx37XwFpoTElLBmL7F_5qUk-eYvsX_mpST5zYXL7Lm2Fl2bs_jReHT90mQoywi69SSmKuw2bWej9a4&_nc_ohc=OmA-IndpQY8Q7kNvgEc9ZTn&_nc_zt=24&_nc_ht=scontent.fdac14-1.fna&_nc_gid=A8-_VLTh7EFQc2xHhv35Y5F&oh=00_AYA1dL67Cydld7TqwCEawE5CrIi8QwLHVnaLRLa9xb2krw&oe=676C8271"
-            alt="Sachin Deb"
-            className="profile-picture"
-        />
+        <img src={profilePicture} alt="Sachin Deb" className="profile-picture" />
       </div>
       <h2>Sachin Deb</h2>
       <p>Level-2 Software Engineer at Chaldal.tech</p>
