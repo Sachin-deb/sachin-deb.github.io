@@ -26,7 +26,7 @@ export const profile = {
 };
 
 export const news = [
-  { date: 'Sep 2026', text: <><em>Reducing the Adaptation Gap Through Reachable Fisher Geometry</em> is on <a href="https://arxiv.org/abs/2609.36329">arXiv</a> and under review at <strong>ICLR 2027</strong>.</> },
+  { date: 'Sep 2026', text: <><em>Reducing the Adaptation Gap Through Reachable Fisher Geometry</em> is on <a href="https://arxiv.org/abs/2609.36329">arXiv</a> and under review.</> },
   { date: 'Aug 2026', text: <><em>Representation Is Not Enough</em> (FABLE-Therm), contactless stress and craving sensing in opioid use disorder, is on <a href="https://arxiv.org/abs/2608.16087">arXiv</a>.</> },
   { date: '2025', text: <>Joined <strong>Arizona State University</strong> as a Ph.D. student and Graduate Research Associate in the UIS Lab.</> },
   { date: '2025', text: <>Served as <strong>Chief Judge</strong> of the Bangladesh Olympiad in Informatics, National Round.</> },
@@ -71,7 +71,7 @@ export const research = [
   {
     id: 'reachable-fisher',
     title: 'Reachable Fisher Geometry for Fairer Parameter-Efficient Fine-Tuning',
-    status: 'ICLR 2027 submission',
+    status: 'Under review',
     area: 'ML theory · LoRA / DoRA · Subgroup fairness',
     summary:
       'Why fine-tuning large pretrained models helps some subgroups more than others, and a training objective that narrows the gap. Introduces the reachable Fisher: curvature measured only along directions a LoRA or DoRA adapter can actually change.',
@@ -135,7 +135,7 @@ export const publications = [
   {
     title: 'Reducing the Adaptation Gap Through Reachable Fisher Geometry',
     authors: ['Wasif Jalal', 'Sachin Deb', 'Asif Salekin'],
-    venue: 'arXiv:2609.36329, 2026 · Under review at ICLR 2027',
+    venue: 'arXiv:2609.36329, 2026 · Under review',
     project: 'reachable-fisher',
     links: [{ label: 'arXiv', url: 'https://arxiv.org/abs/2609.36329' }, { label: 'PDF', url: 'https://arxiv.org/pdf/2609.36329' }],
   },
