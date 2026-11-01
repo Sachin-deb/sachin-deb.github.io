@@ -191,7 +191,7 @@ export const education = [
   {
     school: 'Arizona State University',
     degree: 'Ph.D. in Computer Science',
-    detail: 'GPA 4.33 / 4.00 · Advisor: Prof. Asif Salekin',
+    detail: 'GPA 4.00 / 4.00 · Advisor: Prof. Asif Salekin',
     dates: '2025 – Present',
   },
   {
