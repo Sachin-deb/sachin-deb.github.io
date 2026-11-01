@@ -1,96 +1,76 @@
-import React from "react";
+import React from 'react';
+import Section from './Section';
+import Authors from './Authors';
+import { themes, research, publications } from '../data';
+
+function ResearchCard({ project }) {
+  const paper = publications.find((p) => p.project === project.id);
+
+  return (
+    <article className="project" id={project.id}>
+      <div className="project-head">
+        <span className="project-status">{project.status}</span>
+        <span className="project-area">{project.area}</span>
+      </div>
+      <h3>{project.title}</h3>
+      {paper && <Authors names={paper.authors} />}
+      <p className="project-summary">{project.summary}</p>
+
+      {project.metrics && (
+        <dl className="metrics">
+          {project.metrics.map((m) => (
+            <div key={m.label} className="metric">
+              <dt>{m.value}</dt>
+              <dd>
+                {m.label}
+                {m.note && <span>{m.note}</span>}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
+
+      {project.points && (
+        <ul className="project-points">
+          {project.points.map((p) => (
+            <li key={p}>{p}</li>
+          ))}
+        </ul>
+      )}
+
+      {project.links && (
+        <div className="pill-links">
+          {project.links.map((l) => (
+            <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a>
+          ))}
+        </div>
+      )}
+    </article>
+  );
+}
 
 function Research() {
   return (
-    <div className="research-section">
-      <h2>Research</h2>
-      <p>
-        My research spans <strong>multimodal large language models</strong> and
-        <strong> federated learning optimization</strong>, with a focus on
-        robustness, safety, and performance on challenging data distributions.
-      </p>
-
-      <div className="research-entry">
-        <h3>Ph.D. Research — Arizona State University (2025–Present)</h3>
-        <ul className="research-highlights">
-          <li>
-            Investigating <strong>multimodal LLMs and foundation models</strong>{" "}
-            for vision–language reasoning and human-centered AI applications.
-          </li>
-          <li>
-            Exploring <strong>formal verification of neural networks</strong> to
-            guarantee robustness and safety in real-world deployments.
-          </li>
-          <li>
-            Current focus: developing methods to test and improve{" "}
-            <strong>reliability of decision-making in multimodal AI systems</strong>.
-          </li>
-        </ul>
+    <Section
+      id="research"
+      title="Research"
+      intro="Three questions run through my work: how to adapt foundation models when labels are scarce, how to sense health without a clinic, and how to know a model will still work on the next person."
+    >
+      <div className="themes">
+        {themes.map((t, i) => (
+          <div key={t.title} className="theme">
+            <span className="theme-num">0{i + 1}</span>
+            <h3>{t.title}</h3>
+            <p>{t.text}</p>
+          </div>
+        ))}
       </div>
 
-      <div className="research-entry">
-        <h3>Undergraduate Thesis — BUET (2018–2024)</h3>
-        <p>
-          <em>
-            “Hybrid Optimization Methods for Enhancing Client Quality Scores for
-            Non-IID Datasets”
-          </em>{" "}
-          (Advisor: Dr. Muhammad Ali Nayeem)
-        </p>
-        <ul className="research-highlights">
-          <li>
-            Developed a <strong>hybrid optimization algorithm</strong> combining
-            gradient descent and simulated annealing to improve federated
-            learning with heterogeneous client data.
-          </li>
-          <li>
-            Proposed a <strong>maximum likelihood client weighting</strong>{" "}
-            method to dynamically shuffle contributions and enhance aggregation
-            accuracy.
-          </li>
-          <li>
-            Achieved <strong>71% global accuracy</strong> on CIFAR-10/100,
-            outperforming FedAvg baselines (61–65%).
-          </li>
-          <li>
-            Results summarized in{" "}
-            <a
-              href="https://drive.google.com/file/d/1XQWrXt-5JjRTEPkYbbJ4a5iIqCHRif4E/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Extended Abstract
-            </a>
-            .
-          </li>
-        </ul>
-        <div className="research-links">
-          <h4>Links</h4>
-          <ul>
-            <li>
-              <a
-                href="https://github.com/Sachin-deb/Federated-Learning-MOONLiHood"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GitHub Repository
-              </a>{" "}
-              — Codebase for hybrid optimization methods.
-            </li>
-            <li>
-              <a
-                href="https://drive.google.com/file/d/1XQWrXt-5JjRTEPkYbbJ4a5iIqCHRif4E/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Extended Abstract
-              </a>{" "}
-              — Detailed write-up of the thesis work.
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
+      <h3 className="subhead">Selected projects</h3>
+      {research.map((project) => (
+        <ResearchCard key={project.id} project={project} />
+      ))}
+    </Section>
   );
 }
 

@@ -1,9 +1,12 @@
 import React from 'react';
+import { profile } from '../data';
 
 function Footer() {
   return (
     <footer className="footer">
-      <p>© 2024 Sachin Deb. All rights reserved.</p>
+      <p>
+        © {new Date().getFullYear()} {profile.name} · {profile.email}
+      </p>
     </footer>
   );
 }

@@ -1,15 +1,25 @@
 import React from 'react';
-import Header from './components/Header';
-import Tabs from './components/Tabs';
+import Nav from './components/Nav';
+import Hero from './components/Hero';
+import News from './components/News';
+import Research from './components/Research';
+import Publications from './components/Publications';
+import Experience from './components/Experience';
+import Honors from './components/Honors';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="app">
-      <div className='container'> 
-        <Header />
-        <Tabs />
-      </div>
+      <Nav />
+      <main className="container">
+        <Hero />
+        <News />
+        <Research />
+        <Publications />
+        <Experience />
+        <Honors />
+      </main>
       <Footer />
     </div>
   );
